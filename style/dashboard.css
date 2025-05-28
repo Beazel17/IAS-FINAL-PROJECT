@@ -1,0 +1,351 @@
+/* Reset some basics */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f8;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+  
+    flex-direction: column;
+  }
+  
+  .navbar {
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .navbar strong {
+    color: #ffd369;
+  }
+  
+  .navbar-actions a {
+    color: #ccc;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-actions a:hover {
+    color: #ffd369;
+  }
+  
+  .logout-link {
+    font-weight: 700;
+    color: #ff6b6b !important;
+  }
+  
+  .logout-link:hover {
+    color: #ff4c4c !important;
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 15px 50px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .motor-upload {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    margin-bottom: 40px;
+  }
+  
+  .motor-upload h2 {
+    margin-bottom: 20px;
+    color: #1e1e2f;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+  }
+  
+  .motor-upload label {
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .motor-upload input[type="text"],
+  .motor-upload textarea,
+  .motor-upload input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1.8px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+  }
+  
+  .motor-upload input[type="text"]:focus,
+  .motor-upload textarea:focus,
+  .motor-upload input[type="file"]:focus {
+    outline: none;
+    border-color: #ffd369;
+    box-shadow: 0 0 8px rgba(255, 211, 105, 0.6);
+  }
+  
+  .motor-upload button {
+    background-color: #ffd369;
+    border: none;
+    color: #1e1e2f;
+    font-weight: 700;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .motor-upload button:hover {
+    background-color: #e6b642;
+  }
+  
+  /* Motorcycles List */
+  .motor-list h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e1e2f;
+    margin-bottom: 25px;
+    letter-spacing: 0.02em;
+  }
+  
+  /* No motorcycles message */
+  .motor-list p {
+    font-style: italic;
+    color: #777;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .motor-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 6000px;
+    transition: transform 0.3s ease;
+  }
+  
+  .motor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  .motor-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .motor-card video {
+    width: 100%;
+    margin-top: 0.75rem;
+    border-radius: 0 0 10px 10px;
+    background-color: #000;
+  }
+  
+  .motor-details {
+    padding: 1rem 1.25rem;
+  }
+  
+  .motor-details h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #222;
+  }
+  
+  .motor-details p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #444;
+    margin-bottom: 0.8rem;
+  }
+  
+  .motor-details p em {
+    color: #888;
+    font-style: italic;
+  }
+  
+  .motor-details small {
+    color: #666;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .buttons button {
+    cursor: pointer;
+    border: none;
+    background: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons button:hover:not(:disabled) {
+    background-color: #ddd;
+  }
+  
+  .buttons button.liked {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .buttons button.disliked {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .buttons button:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+  
+  /* Like/Dislike buttons */
+  .like-btn, .dislike-btn {
+    border: 2.5px solid #bbb;
+    background-color: transparent;
+    color: #555;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 90px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .like-btn:hover:not(:disabled) {
+    border-color: #4caf50;
+    color: #4caf50;
+    background-color: #e8f5e9;
+  }
+  
+  .dislike-btn:hover:not(:disabled) {
+    border-color: #f44336;
+    color: #f44336;
+    background-color: #ffebee;
+  }
+  
+  .like-btn.liked {
+    border-color: #4caf50;
+    color: #fff;
+    background-color: #4caf50;
+  }
+  
+  .dislike-btn.disliked {
+    border-color: #f44336;
+    color: #fff;
+    background-color: #f44336;
+  }
+  
+  .like-btn:disabled,
+  .dislike-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+  
+  /* Responsive */
+  @media (max-width: 720px) {
+    .motor-card {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .motor-card img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .buttons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .navbar-actions a {
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+  .media-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  
+  .media-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .media-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .upload-btn {
+    padding: 10px 15px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .upload-btn:hover {
+    background-color: #444;
+  }
+  
